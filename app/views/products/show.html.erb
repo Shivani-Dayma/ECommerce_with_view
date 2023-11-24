@@ -1,0 +1,16 @@
+
+
+<div class="container">
+<div class="card" style="width: 18rem;">
+  <%= image_tag (url_for(@product.product_image)) ,class:"card-img-top"%>
+  <div class="card-body">
+    <h5 class="card-title"><%= @product.name%></h5>
+    <p class="card-text"><%= @product.description%></p>
+  </div>
+  
+  <div class="card-body">
+    <a href="#" , class: 'btn btn-primary'>Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
