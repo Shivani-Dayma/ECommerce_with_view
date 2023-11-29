@@ -30,6 +30,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      token = JsonWebToken.encode(user_id: @user.id)
+      @user.update_columns(token: token)
+      time = Time.now + 24.hours.to_i
       render 'layouts/homepage'
       # redirect_to @user, notice: 'User was successfully created.'
     else

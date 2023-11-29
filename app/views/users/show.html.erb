@@ -58,8 +58,7 @@
       <%= form.label :email %>
       <%= form.email_field :email, class: 'form-control', required: true %>
     </div>
-  
-
+    <%= link_to "Back Home", main_path(@user), method: :post, class: 'btn btn-primary' %>
 
   <% end %>
 </div>

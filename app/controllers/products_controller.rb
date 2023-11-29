@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_user, :authorize_request
-  # before_action :authorize_request
+  # before_action :set_user, :authorize_request
+  before_action :set_user
 
   def index
-    @product=@user.products.all
+    @products=Product.all
   end
 
   def edit
@@ -15,13 +15,12 @@ class ProductsController < ApplicationController
   end
    
   def create
-  # debugger
-  @product = @user.products.new(product_params)
-  if @product.save
-    render 'show'
-  else
-    render :new
-  end
+    @product = @user.products.new(product_params)
+    if @product.save
+      render 'show'
+    else
+      render :new
+    end
   end
 
   def show

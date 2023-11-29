@@ -1,14 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  password_digest: MyString
-  address: MyString
+  id: 1
+  name: "Richie Williamson"
+  email: "angla.corwin@metz.test"
+  password_digest: "$2a$04$pij7gyO6NV9pKlHCBM.aMe35JZ5U7YCsjKzhlbB4N1m..."
+  address: "Suite 848 51455 Lavonne Overpass, Hickleshire, SD ..."
   contactno: 1
   role: 1
-  token: MyString
-
 two:
   name: MyString
   email: MyString

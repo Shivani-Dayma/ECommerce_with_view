@@ -38,18 +38,21 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Welcome to my website!</h1>
   </header>
   <nav>
-   <a href="<%= authentication_signout_path()%>">Sign Out</a>
+   <a href="<%= authentication_signout_path(@user)%>">Sign Out</a>
    <a href="<%= edit_user_path(@user)%>">Edit Profile</a>
    <a href="<%= user_path(@user) %>">View Profile</a>
   </nav>
-  <%= link_to "Add Product", new_user_product_path(@user), method: :post, class: 'btn btn-primary' %>
-
+   
+ <% if @user.role == 'supplier' %>
+ <%= link_to "Add Product", new_user_product_path(@user), method: :post, class: 'btn btn-primary' %> 
+  <% else %>
+   <%= link_to "View Product", user_products_path(@user), class: 'btn btn-primary' %> 
+  <% end %>
 </body>
-
-
 </html>
  
