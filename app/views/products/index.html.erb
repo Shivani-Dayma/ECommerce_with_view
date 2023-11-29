@@ -1,2 +1,27 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+  <style>
+
+  .table{
+    color: greenyellow;
+  }
+.card-img-top{
+  width:100%;
+  height: 250px;
+}
+</style>
+
+
+<div class="container">
+
+<div class="row">
+<% @products.each do |pro| %>
+<div class="col">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <%= image_tag (url_for(pro.product_image)) ,class:"card-img-top"%>
+      <h5 class="card-title"><%= pro.name %></h5>
+      <p class="card-text"><%= pro.description %></p>
+      <h5 class="card-title"><%= pro.price %></h5>
+    </div>  
+  </div>
+</div>
+<%end%>
